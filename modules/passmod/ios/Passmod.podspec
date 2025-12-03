@@ -10,18 +10,14 @@ Pod::Spec.new do |s|
     :tvos => '15.1'
   }
   s.source         = { git: '' }
-  s.static_framework = true
+  # s.static_framework = true
 
   s.dependency 'ExpoModulesCore'
-  if defined?(:spm_dependency)
-    spm_dependency(s,
-      url: 'https://github.com/AndyQ/NFCPassportReader',
-      requirement: {kind: 'branch', branch: 'main'},
-      products: ['NFCPassportReader']
-    )
-  else 
-    raise "Please upgrade React Native to >=0.75.0 to use SPM dependencies." 
-  end 
+  spm_dependency(s,
+    url: 'https://github.com/ospfranco/NFCPassportReader',
+    requirement: {kind: 'upToNextMajorVersion', minimumVersion: '2.2.0'},
+    products: ['NFCPassportReader']
+  )
 
   # Swift/Objective-C compatibility
   s.pod_target_xcconfig = {

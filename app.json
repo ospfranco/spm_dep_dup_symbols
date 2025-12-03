@@ -36,9 +36,14 @@
           "backgroundColor": "#ffffff"
         }
       ],
-      ["expo-build-properties", {
-        "useFrameworks": "dynamic"
-      }]
+      [
+        "expo-build-properties",
+        {
+          "useFrameworks": "dynamic"
+        }
+      ],
+      "expo-font",
+      "expo-web-browser"
     ],
     "experiments": {
       "typedRoutes": true
